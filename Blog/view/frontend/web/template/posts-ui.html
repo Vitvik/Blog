@@ -1,0 +1,15 @@
+<div class="opc-block-summary">
+    <span data-bind="i18n: 'Our posts'" class="title"></span>
+    <div data-bind="visible: visible()">We have not posts in this category </div>
+        <!-- ko foreach: getListTitle() -->
+        <a data-bind="attr: {href: url }">
+            <span data-bind="text: title"></span>
+        </a>
+        <br>
+        <!-- /ko -->
+    <!-- ko getUrlNewPost() -->
+    <hr>
+    <a data-bind="attr: {href: urlNewPost }">You can write a post</a>
+    <!-- /ko -->
+</div>
+

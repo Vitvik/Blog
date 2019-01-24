@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Vitvik\Blog\Api\Data\PostInterface"
+                type="Vitvik\Blog\Model\Blog"/>
+
+    <preference for="Vitvik\Blog\Api\PostRepositoryInterface"
+                type="Vitvik\Blog\Model\PostRepository"/>
+
+    <preference for="Vitvik\Blog\Api\Data\PostSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults" />
+</config>

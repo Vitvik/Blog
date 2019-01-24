@@ -1,0 +1,25 @@
+<?php $viewModel = $block->getViewModel();
+$categoryId = $viewModel->getCurrentCategoryId();
+?>
+<div data-bind="scope: 'postsUiComponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+                "Magento_Ui/js/core/app":{
+                    "components": {
+                        "postsUiComponent": {
+                            "component": "Vitvik_Blog/js/posts-ui",
+                             "config": {
+                                "template": "Vitvik_Blog/posts-ui",
+                                 "url": <?= json_encode('/rest/V1/blog/title/'.$categoryId) ?>,
+                                 "urlNewPost":<?= json_encode($block->getUrl('blog/index/form'))?>
+                            }
+                        }
+                    }
+                }
+        }
+    }
+</script>

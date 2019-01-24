@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <!--<uiComponent name="title_listing" before="-"/>-->
+            <block class="Magento\Framework\View\Element\Template" name="posts_in_category" template="Vitvik_Blog::posts.phtml" after="-">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Vitvik\Blog\ViewModel\CategoryId</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

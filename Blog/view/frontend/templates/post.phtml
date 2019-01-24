@@ -1,0 +1,11 @@
+<?php $id = $block->getControllerId();
+    $post = $block->getPostById($id);
+?>
+<div class="post-item" style="background-color:#f5f5f5; margin: 5px;">
+    <p>
+        <?= $block->escapeHtml($post->getTitle()) ?> |
+        <?= $block->getpostDate($post) ?>
+    </p>
+    <p><?= $block->escapeHtml($post->getContent())?></p>
+</div>
+

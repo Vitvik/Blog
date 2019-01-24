@@ -1,0 +1,20 @@
+<div>
+    <div class="toolbar">
+
+        <?= $block->getPagerHtml() ?>
+    </div>
+    <div class="posts-list">
+        <?php foreach ($block->getBlogCollection() as $post):?>
+            <div class="post-item" style="background-color:#f5f5f5; margin: 5px;">
+                <p>
+                    <?= $block->escapeHtml($post->getTitle()) ?> |
+                    <?= $block->getpostDate($post) ?>
+                </p>
+                <p><?= $block->escapeHtml($post->getContent())?></p>
+            </div>
+        <?php endforeach;?>
+    </div>
+    <div class="toolbar">
+        <?= $block->getPagerHtml() ?>
+    </div>
+</div>
