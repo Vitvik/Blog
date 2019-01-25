@@ -130,17 +130,13 @@ class PostRepository implements PostRepositoryInterface
     public function getTitleByCatId($categoryId)
     {
         $collection = $this->postCollectionFactory->create();
-//        $arr = $collection->getCollectionByCategoryId($categoryId)->getData();
         $collection->getCollectionByCategoryId($categoryId);
+        $result = [];
         foreach ($collection as $post) {
             $post->appendUrl();
+            $result[] = $post->getData();
         }
-        return $collection->getData();
-//        $data =[];
-//        foreach ($arr as $value){
-//            $data[] = array_merge($value, array('url'=>self::POST_PATH .$value['post_id']));
-//        }
-//        return  $data;
+        return  $result;
     }
 
     /**

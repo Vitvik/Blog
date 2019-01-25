@@ -12,6 +12,7 @@ class BlogList extends \Magento\Framework\View\Element\Template
     private $timezone;
     private $coreRegistry;
     protected $post;
+    protected $request;
 
 
     public function  __construct(
@@ -23,12 +24,12 @@ class BlogList extends \Magento\Framework\View\Element\Template
         \Vitvik\Blog\Api\PostRepositoryInterface $post,
         array $data = [])
     {
-        parent::__construct($context, $data);
         $this->collectionFactory = $collectionFactory;
         $this->blogResource = $blogResource;
         $this->timezone = $timezone;
         $this->coreRegistry = $coreRegistry;
         $this->post = $post;
+        parent::__construct($context, $data);
     }
 
     public function getBlogCollection()

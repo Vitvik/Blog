@@ -13,7 +13,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
         );
     }
 
-
     public function getCollectionWhitCategory(){
         return $this->join(
             ['bc' => 'vitvik_blog_category'],
@@ -28,32 +27,6 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
             ->addFieldToFilter('category_id', ["eq" => $categoryId ]);
         return $this;
     }
-
-//    public function getTitels($categoryId)
-//    {
-//        $adapter = $this->getConnection();
-//        $select = $adapter
-//        ->select()
-//        ->from($this->getTable('vitvik_blog_post'),
-//            ['post_id', 'title']
-//            )
-//        ->join(
-//            ['bc' => 'vitvik_blog_category'],
-//            "vitvik_blog_post.post_id = bc.post_id",
-//            ['post_id' => 'vitvik_blog_post.post_id']
-//        )
-//        ->where('bc.category_id = ?', (int)$categoryId)
-//        ->group("vitvik_blog_post.post_id");
-//
-//        $arr = $adapter->fetchAll($select);
-//        $data = [];
-//        foreach ($arr as $value){
-//            $data[] = array_merge($value, array('url'=>'/blog/index/post/'.$value['post_id']));
-//        }
-//
-//        return  $data;
-//
-//    }
 
 //SELECT vitvik_blog_post.post_id, vitvik_blog_post.title
 //FROM vitvik_blog_post

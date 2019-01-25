@@ -3,7 +3,8 @@ namespace Vitvik\Blog\Model;
 
 class Blog extends \Magento\Framework\Model\AbstractModel implements \Vitvik\Blog\Api\Data\PostInterface
 {
-    const POST_PATH = '/blog/index/post/';
+//    const POST_PATH = 'blog/index/post/';
+    const POST_PATH = 'post/';
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
 
@@ -17,9 +18,9 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Vitvik\Blo
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
+        \Magento\Framework\UrlInterface $urlInterface,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-        \Magento\Framework\UrlInterface $urlInterface,
         array $data = [])
     {
         $this->urlBuilder = $urlInterface;
@@ -32,7 +33,8 @@ class Blog extends \Magento\Framework\Model\AbstractModel implements \Vitvik\Blo
      * @return string
      */
     public function appendUrl(){
-       return $this->setData('url', $this->urlBuilder->getUrl(self::POST_PATH .$this->getId()));
+
+      return $this->setData('url', $this->urlBuilder->getUrl(self::POST_PATH).$this->getPostId());
     }
 
     /**

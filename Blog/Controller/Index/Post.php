@@ -24,8 +24,9 @@ class Post extends \Magento\Framework\App\Action\Action
 }
     public function execute()
 {
-    $url = explode("/", $this->request->getPathInfo());
-    $id = array_pop($url);
+//    $url = explode("/", $this->request->getPathInfo());
+//    $id = array_pop($url);
+    $id = $this->request->getParam('post_id');
     $this->registry->register('POST_ID', $id);
     $result = $this->pageResultFactory->create();
     return $result;

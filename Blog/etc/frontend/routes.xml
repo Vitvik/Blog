@@ -4,5 +4,8 @@
         <route id="blog" frontName="blog">
             <module name="Vitvik_Blog"/>
         </route>
+        <route id="post" frontName="post">
+            <module name="Vitvik_Blog"/>
+        </route>
     </router>
 </config>

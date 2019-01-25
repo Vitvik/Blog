@@ -1,6 +1,5 @@
 <?php
 namespace Vitvik\Blog\Controller\Index;
-namespace Vitvik\Blog\Controller\Index;
 
 class Form extends \Magento\Framework\App\Action\Action
 {

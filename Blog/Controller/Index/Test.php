@@ -28,8 +28,6 @@ class Test extends \Magento\Framework\App\Action\Action
         $test = $this->postRepository->getTitleByCatId('4');
 
         echo '<pre>';
-//        var_dump($collectionData->getData());
-//        var_dump($collectionData->getCollectionByCategoryId('4')->getData());
         var_dump($test);
         die();
         $result = $this->pageResultFactory->create();
